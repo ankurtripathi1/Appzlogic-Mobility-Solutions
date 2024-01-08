@@ -24,6 +24,7 @@ function EditUser() {
         userGroup: constants.defaultGroup,
       };
 
+	  // Sates for changing inputs
   const [firstName, setFirstName] = useState(initialUser.firstName);
   const [lastName, setLastName] = useState(initialUser.lastName);
   const [user, setUser] = useState(initialUser.userAuthorizations);
@@ -33,7 +34,7 @@ function EditUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  // Action as per condition
     if (isEditing) {
       dispatch(
         editUser({

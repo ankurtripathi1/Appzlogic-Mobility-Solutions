@@ -1,26 +1,14 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../Store/UserReducer";
-import EditUser1 from "./EditUserAdd";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import EditUser from "./EditUserAdd";
 
 function Home() {
   const users = useSelector((state) => state.users);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleAddUser = (userData) => {
-    dispatch(addUser(userData));
-  };
-
-  const handleCancel = () => {
-    navigate("/");
-  };
-
   return (
     <>
       
-	  <EditUser1 onSubmit={handleAddUser} onCancel={handleCancel} />
+	  <EditUser  />
 
       <thead>
         <tr>
